@@ -2,7 +2,7 @@ const attrIsTouched = 'data-vdv-touched';
 
 const updateValue = (el, binding, vnode) => {
   if (!binding.value) return;
-  if (el.getAttribute(attrIsTouched)) return;
+  if (el.getAttribute('attrIsTouched')) return;
 
   if (typeof el.value == 'undefined') {
     console.error('[vue-default-value warn] The element does not have a value property');
@@ -15,7 +15,7 @@ const updateValue = (el, binding, vnode) => {
 
   var model = vnode.data.directives.find(dir => dir.rawName === 'v-model');
   if (!model || !model.expression) return;
-  vnode.context.$watch(model.expression, () => el.setAttribute(attrIsTouched, true));
+  vnode.context.$watch(model.expression, () => el.setAttribute('attrIsTouched', true));
 };
 
 const update = (el, binding, vnode) => {
