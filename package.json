@@ -1,6 +1,6 @@
 {
   "name": "vue-default-value",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Vue.js Directive to set a default value in the value attribute that will not affect the model state.",
   "main": "index.js",
   "scripts": {
@@ -35,7 +35,7 @@
   },
   "babel": {
     "presets": [
-      "es2015"
+      "env"
     ],
     "plugins": [
       "add-module-exports"
