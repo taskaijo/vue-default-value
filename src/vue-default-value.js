@@ -1,6 +1,6 @@
-const attrIsTouched = 'data-vdv-touched';
+let attrIsTouched = 'data-vdv-touched';
 
-const updateValue = (el, binding, vnode) => {
+let updateValue = (el, binding, vnode) => {
   if (!binding.value) return;
   if (el.getAttribute('attrIsTouched')) return;
 
@@ -18,11 +18,11 @@ const updateValue = (el, binding, vnode) => {
   vnode.context.$watch(model.expression, () => el.setAttribute('attrIsTouched', true));
 };
 
-const update = (el, binding, vnode) => {
+let update = (el, binding, vnode) => {
   vnode.context.$nextTick(() => updateValue(el, binding, vnode));
 };
 
-const clear = el => el.removeAttribute(attrIsTouched);
+let clear = el => el.removeAttribute(attrIsTouched);
 
 export default {
   inserted: update,
